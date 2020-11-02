@@ -48,6 +48,4 @@ def save_img(img, filename, path):
 	print(f"Success.\n")
 
 if __name__ == "__main__":
-	print("\n")
 	main()
-	print("\n")
