@@ -2,6 +2,9 @@ from string import ascii_lowercase
 from random import choice
 
 def generate_urls(n):
+	"""
+	Generates a list of URLs by concatenating two random letters followed by four random numbers to the end of the URL prefix.
+	"""
 	prefix = "https://prnt.sc/"
 	urls = []
 	i = 0

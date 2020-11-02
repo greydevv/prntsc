@@ -22,6 +22,9 @@ def check_dir():
 		os.makedirs(savedir)
 
 def load_url(url):
+	"""
+	Scrapes the image URL from the webpage and sends the url to save_img() to be saved.
+	"""
 	path = os.getcwd() + "/imgs/"
 	file_ext = ".png"
 	req = Request(url, headers={"User-Agent":"Mozilla/5.0"})
@@ -35,6 +38,9 @@ def load_url(url):
 	save_img(img, f"{url[-6:]}{file_ext}", path)
 
 def save_img(img, filename, path):
+	"""
+	Opens the image URL and saves the image.
+	"""
 	print(f"Loading <{filename}>...")
 	req = Request(img, headers={"User-Agent":"Mozilla/5.0"})
 	webpage = urlopen(req).read()
