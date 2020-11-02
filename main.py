@@ -3,11 +3,11 @@ from bs4 import BeautifulSoup
 import lxml
 import os
 from prntsc.generate_urls import generate_urls
-
+import sys
 
 def main():
 	check_dir()
-	urls = generate_urls(10)
+	urls = generate_urls(int(sys.argv[1]))
 	for url in urls:
 		load_url(url)
 
@@ -34,7 +34,6 @@ def load_url(url):
 	if not img.startswith("https://image.prntscr.com/image/"):
 		newurl = generate_urls(1)[0]
 		return load_url(newurl)
-
 	save_img(img, f"{url[-6:]}{file_ext}", path)
 
 def save_img(img, filename, path):
@@ -47,7 +46,6 @@ def save_img(img, filename, path):
 	with open(path+filename, "wb") as f:
 		f.write(webpage)
 	print(f"Success.\n")
-
 
 if __name__ == "__main__":
 	print("\n")
