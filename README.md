@@ -6,7 +6,10 @@ This script will generate a specified amount of URLs and download the screenshot
 
 ### Usage
 
-From terminal, run `python main.py` followed by the number of images to be generated.
+This repository is no longer actively maintained. The most recent supported Python is `Python 3.8`.
+
+
+From terminal, run `python3.8 main.py`, followed by the number of images to be generated.
 
 To generate five images:
 ```
