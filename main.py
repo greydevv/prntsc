@@ -47,11 +47,14 @@ def save_img(img, filename, path):
 			'Accept-Encoding': 'none',
 			'Accept-Language': 'en-US,en;q=0.8',
 			'Connection': 'keep-alive'}
-	req = Request(img, headers=hdr)
-	webpage = urlopen(req).read()
-	with open(path+filename, "wb") as f:
-		f.write(webpage)
-	print(f"Success.\n")
+	try:
+		req = Request(img, headers=hdr)
+		webpage = urlopen(req).read()
+		with open(path+filename, "wb") as f:
+			f.write(webpage)
+		print(f"Success.\n")
+	except:
+		print(f"Image failed..")
 
 if __name__ == "__main__":
 	main()
